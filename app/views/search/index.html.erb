@@ -1,4 +1,5 @@
 
   <%@words.each do |word| %>
+    <p class="valid"> <%= params[:q] %>  is a valid word </p>
     <p class="root">Its root form is <%= word.root %> </p>
   <% end %>
