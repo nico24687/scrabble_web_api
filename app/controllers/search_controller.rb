@@ -1,5 +1,5 @@
 class SearchController < ApplicationController 
   def index 
-    @words = [Word.new, Word.new]
+    @words = WordPresenter.new
   end
 end
