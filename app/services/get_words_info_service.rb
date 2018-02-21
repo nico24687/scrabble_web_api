@@ -12,7 +12,9 @@ class GetWordsInfoService
 
     response = @conn.get("/api/v1/inflections/en/#{word}")
 
+    
     JSON.parse(response.body)
+  
 
   end
 end 

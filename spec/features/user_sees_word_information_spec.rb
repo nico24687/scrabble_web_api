@@ -11,7 +11,7 @@ describe "user searches a word in the search box" do
     expect(page).to have_css(".root")
     expect(page).to have_content("Its root form is fox")
   end
-  xit "if word is invalid it sees a warning message saying the word in not a valid word" do 
+  it "if word is invalid it sees a warning message saying the word in not a valid word" do 
     visit "/"
     fill_in "q", with: "foxez"
     click_on "Validate Word"

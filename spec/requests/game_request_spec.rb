@@ -8,9 +8,10 @@ describe "Games API" do
 
     game = JSON.parse(response.body)
     expect(game).to have_key("game_id")
+    expect(game).to have_key("scores")
   end
 
-  it "can create a new game" do 
+  xit "can create a new game" do 
     game_params = {player_1_id: 1, player_2_id: 2}
     post "/api/v1/games", params: {game: game_params}
 
