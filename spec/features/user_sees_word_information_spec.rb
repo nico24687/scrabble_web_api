@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe "user searches a real word in the seaerch box" do 
-  it "sees that the word is valid and what the root form of the word is" do 
+describe "user searches a word in the search box" do 
+  it "if word is valid it sees the root form of the word is" do 
     visit "/"
     fill_in "q", with: "foxes"
     click_on "Validate Word"
@@ -10,6 +10,14 @@ describe "user searches a real word in the seaerch box" do
     # expect(page).to have_css(".valid")
     expect(page).to have_css(".root")
     expect(page).to have_content("Its root form is fox")
+  end
+  xit "if word is invalid it sees a warning message saying the word in not a valid word" do 
+    visit "/"
+    fill_in "q", with: "foxez"
+    click_on "Validate Word"
+
+    expect(current_path).to eq(search_path)
+    expect(page).to have_content("That is not a valid word")
   end
 end 
 
