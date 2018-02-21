@@ -7,7 +7,19 @@ describe "Games API" do
     get "/api/v1/games/#{game.id}"
 
     game = JSON.parse(response.body)
-    expect(game).to have_key("id")
+    expect(game).to have_key("game_id")
+  end
+
+  it "can create a new game" do 
+    game_params = {player_1_id: 1, player_2_id: 2}
+    post "/api/v1/games", params: {game: game_params}
+
+    game = Game.last 
+
+    expect(response).to have_http_status_code(201)
+
+    get "/ap/v1/games/1"
+    expect(game).to have_key("game_id")
   end
 end
 
