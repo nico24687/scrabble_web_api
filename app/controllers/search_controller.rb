@@ -1,5 +1,6 @@
 class SearchController < ApplicationController 
   def index 
-    @words = WordPresenter.new
+    word = params[:q]
+    @words = WordPresenter.new(word).words
   end
 end
