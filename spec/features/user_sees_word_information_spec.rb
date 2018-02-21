@@ -7,8 +7,9 @@ describe "user searches a real word in the seaerch box" do
     click_on "Validate Word"
 
     expect(current_path).to eq(search_path)
-    expect(page).to have_css(".valid")
+    # expect(page).to have_css(".valid")
     expect(page).to have_css(".root")
+    expect(page).to have_content("Its root form is fox")
   end
 end 
 
