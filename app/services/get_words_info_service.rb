@@ -14,6 +14,7 @@ class GetWordsInfoService
 
     
     JSON.parse(response.body)
+
   
 
   end

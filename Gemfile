@@ -23,6 +23,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry'
   gem 'capybara'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do

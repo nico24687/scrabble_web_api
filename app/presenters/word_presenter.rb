@@ -6,6 +6,6 @@ class WordPresenter
   def words 
     GetWordsInfoService.new.find_words(@word)["results"].first["lexicalEntries"].first["inflectionOf"].map do |word|
       Word.new(root: word["text"])
-    end 
+    end   
   end
 end 

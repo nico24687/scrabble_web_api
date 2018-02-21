@@ -4,7 +4,9 @@ describe "user searches a word in the search box" do
   it "if word is valid it sees the root form of the word is" do 
     visit "/"
     fill_in "q", with: "foxes"
-    click_on "Validate Word"
+    VCR.use_cassette("services/get_words_info_service") do 
+      click_on "Validate Word"
+    end
 
     expect(current_path).to eq(search_path)
     expect(page).to have_css(".valid")
