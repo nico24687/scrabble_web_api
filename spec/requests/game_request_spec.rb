@@ -11,9 +11,9 @@ describe "Games API" do
     expect(game).to have_key("scores")
   end
 
-  xit "can create a new game" do 
-    game_params = {player_1_id: 1, player_2_id: 2}
-    post "/api/v1/games", params: {game: game_params}
+  it "can create a new game" do 
+    game_params = {user_id: 1, word: "at"}
+    post "/api/v1/games/1/plays", params: {game: game_params}
 
     game = Game.last 
 
@@ -21,6 +21,7 @@ describe "Games API" do
 
     get "/ap/v1/games/1"
     expect(game).to have_key("game_id")
+    expect(game).to have_key("scores")
   end
 end
 
