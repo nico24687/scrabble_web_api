@@ -8,7 +8,9 @@ class GameSerializer < ActiveModel::Serializer
   end
 
   # def scores
-  #   [object.attributes.merge(score: 15)]
+  #   [
+  #     {user_id: object.plays.first.user_id , score: object.plays.first.score}
+  #   ]
   # end
 
   def scores 
