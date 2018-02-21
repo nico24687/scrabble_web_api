@@ -4,6 +4,8 @@ class WordPresenter
   end
   
   def words 
-    [Word.new(root: "random root")]
+    GetWordsInfoService.new.find_words(word)["results"].first["lexicalEntries"].first["inflectionOf"].first.map do |word|
+      Word.new(root: word["text"])
+    end 
   end
 end 
