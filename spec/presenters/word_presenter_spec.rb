@@ -5,6 +5,6 @@ describe WordPresenter do
     word = "foxes"
     words = WordPresenter.new(word).words
 
-    expect(words.first.root).to eq("random root")
+    expect(words.first.root).to eq("fox")
   end
 end
