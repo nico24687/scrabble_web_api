@@ -24,13 +24,3 @@ describe "Games API" do
     expect(game).to have_key("scores")
   end
 end
-
-
-#  create_table "games", force: :cascade do |t|
-#     t.bigint "player_1_id"
-#     t.bigint "player_2_id"
-#     t.datetime "created_at", null: false
-#     t.datetime "updated_at", null: false
-#     t.index ["player_1_id"], name: "index_games_on_player_1_id"
-#     t.index ["player_2_id"], name: "index_games_on_player_2_id"
-#   end
