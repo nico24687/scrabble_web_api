@@ -5,8 +5,14 @@ class WordPresenter
   
 
   def word 
-    result = GetWordsInfoService.new.find_words(@user_input)["results"].first
-    Word.new(root: result["lexicalEntries"].first["inflectionOf"].first["text"], original: result["word"])  
+    response = GetWordsInfoService.new.find_words(@user_input)
+    
+    if response.has_key?("error")
+      Word.new(original: @user_input)
+    else
+      result = response["results"].first
+      Word.new(root: result["lexicalEntries"].first["inflectionOf"].first["text"], original: result["word"])  
+    end
   end
   
 end 

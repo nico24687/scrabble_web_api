@@ -1,2 +1,7 @@
-<p class="valid"> <%= @word.original %>  is a valid word </p>
-<p class="root">Its root form is <%= @word.root %> </p>
+<% if @word.valid? %>
+  <p class="valid"> <%= @word.original %>  is a valid word </p>
+  <p class="root">Its root form is <%= @word.root %> </p>
+<% else %>
+  <p>That is not a valid word</p>
+<% end %>
+

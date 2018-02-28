@@ -4,4 +4,8 @@ class Word
     @root = attributes[:root]
     @original = attributes[:original]
   end
+  
+  def valid?
+    @root.present?
+  end
 end 

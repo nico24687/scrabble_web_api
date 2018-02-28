@@ -9,10 +9,15 @@ class GetWordsInfoService
       faraday.adapter Faraday.default_adapter
     end
 
+
     response = @conn.get("/api/v1/inflections/en/#{word}")
+    if response.status == 200 
+      JSON.parse(response.body)
+    else 
+      {"error" => "word not found"}
+    end 
 
     
-    JSON.parse(response.body)
 
   
 
