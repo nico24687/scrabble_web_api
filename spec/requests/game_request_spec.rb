@@ -10,17 +10,4 @@ describe "Games API" do
     expect(game).to have_key("game_id")
     expect(game).to have_key("scores")
   end
-
-  it "can create a new game" do 
-    game_params = {user_id: 1, word: "at"}
-    post "/api/v1/games/1/plays", params: {game: game_params}
-
-    game = Game.last 
-
-    expect(response).to have_http_status_code(201)
-
-    get "/ap/v1/games/1"
-    expect(game).to have_key("game_id")
-    expect(game).to have_key("scores")
-  end
 end
