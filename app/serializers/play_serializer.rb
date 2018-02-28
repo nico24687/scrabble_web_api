@@ -1,3 +1,5 @@
 class PlaySerializer < ActiveModel::Serializer
-  attributes :id, :score
+  attributes :user_id, :score
+
+
 end
