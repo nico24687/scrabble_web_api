@@ -16,7 +16,10 @@ describe "user searches a word in the search box" do
   it "if word is invalid it sees a warning message saying the word in not a valid word" do 
     visit "/"
     fill_in "q", with: "foxez"
-    click_on "Validate Word"
+    
+    VCR.use_cassette("services/get_words_info_service_error") do 
+      click_on "Validate Word"
+    end
 
     expect(current_path).to eq(search_path)
     expect(page).to have_content("That is not a valid word")
